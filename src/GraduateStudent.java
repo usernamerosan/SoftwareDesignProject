@@ -1,2 +1,3 @@
-public class GraduateStudent extends Student {
+public class GraduateStudent extends UnderGraduateStudent {
+
 }

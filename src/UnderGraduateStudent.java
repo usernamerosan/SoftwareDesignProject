@@ -1,4 +1,4 @@
-public class Student extends Person {
+public class UnderGraduateStudent extends Person {
     private String studentId;
     private Course course= new Course();
     public String getStudentId() {

@@ -1,48 +1,65 @@
 public class Main2 {
     public static void main(String[] args) {
-        Student s1 = new Student();
+
+
+        StudentBuilder sb = new UnderGraduateStudentBuilder();
+        UnderGraduateStudent s = sb.createStudent();
+        UnderGraduateStudent s1 = new UnderGraduateStudent();
+        s.SetCourseName("OOP");
+        s.SetHomeWorkScore("OOP", 20);
+        s.SetProjectScore("OOP", 20);
+        s.SetStudentMidtermScore("OOP", 22);
+        s.SetFinalExamScore("OOP", 24);
         s1.setFirstName("Alex");
         s1.setLastName("Kristopher");
         s1.setStudentId("0001");
         s1.SetCourseName("OOP");
-        s1.SetHomeWorkScore("OOP",20);
+        s1.SetHomeWorkScore("OOP", 20);
         s1.SetProjectScore("OOP", 20);
         s1.SetStudentMidtermScore("OOP", 22);
         s1.SetFinalExamScore("OOP", 24);
 
-        Student s2 = new Student();
+        UnderGraduateStudent s2 = new UnderGraduateStudent();
         s2.setFirstName("Chris");
         s2.setLastName("Tesla");
         s2.setStudentId("0002");
         s2.SetCourseName("OOP");
-        s2.SetHomeWorkScore("OOP",10);
+        s2.SetHomeWorkScore("OOP", 10);
         s2.SetProjectScore("OOP", 15);
         s2.SetStudentMidtermScore("OOP", 20);
         s2.SetFinalExamScore("OOP", 17);
 
-        Student s3 = new Student();
+        UnderGraduateStudent s3 = new UnderGraduateStudent();
         s3.setFirstName("David");
         s3.setLastName("Bahmm");
         s3.setStudentId("0003");
         s3.SetCourseName("OOP");
-        s3.SetHomeWorkScore("OOP",4);
+        s3.SetHomeWorkScore("OOP", 4);
         s3.SetProjectScore("OOP", 4);
         s3.SetStudentMidtermScore("OOP", 12);
         s3.SetFinalExamScore("OOP", 10);
 
-        Student s4 = new Student();
+        UnderGraduateStudent s4 = new UnderGraduateStudent();
         s4.setFirstName("Alex");
         s4.setLastName("Kristopher");
         s4.setStudentId("0004");
         s4.SetCourseName("OOP");
-        s4.SetHomeWorkScore("OOP",15);
+        s4.SetHomeWorkScore("OOP", 15);
         s4.SetProjectScore("OOP", 15);
         s4.SetStudentMidtermScore("OOP", 14);
         s4.SetFinalExamScore("OOP", 15);
 
 
         IGradeCalculator i = new GradeCalculatorByCriteria();
-        i.SetMaxA(100);i.SetMaxB(80);i.SetMaxC(60);i.SetMaxD(50);i.SetMaxF(50);
+        i.SetMaxA(100);
+        i.SetMaxB(80);
+        i.SetMaxC(60);
+        i.SetMaxD(50);
+        i.SetMaxF(50);
+
+        i.SetScore(s);
+        s.SetGrade(i.GetGrade());
+        System.out.println(s.GetStudyResult());
 
         i.SetScore(s1);
         s1.SetGrade(i.GetGrade());
@@ -60,7 +77,11 @@ public class Main2 {
         System.out.println("");
         System.out.println("Rescale the score criteria");
 
-        i.SetMaxA(100);i.SetMaxB(80);i.SetMaxC(70);i.SetMaxD(50);i.SetMaxF(20);
+        i.SetMaxA(100);
+        i.SetMaxB(80);
+        i.SetMaxC(70);
+        i.SetMaxD(50);
+        i.SetMaxF(20);
 
         i.SetScore(s1);
         s1.SetGrade(i.GetGrade());
@@ -82,11 +103,11 @@ public class Main2 {
         cals.AddScore(s2.GetTotalScore("OOP"));
         cals.AddScore(s3.GetTotalScore("OOP"));
         cals.AddScore(s4.GetTotalScore("OOP"));
-        i.SetMaxA((int)cals.GetMaxForGradeA());
-        i.SetMaxB((int)cals.GetMaxForGradeB());
-        i.SetMaxC((int)cals.GetMaxForGradeC());
-        i.SetMaxD((int)cals.GetMaxForGradeD());
-        i.SetMaxF((int)cals.GetMaxForGradeF());
+        i.SetMaxA((int) cals.GetMaxForGradeA());
+        i.SetMaxB((int) cals.GetMaxForGradeB());
+        i.SetMaxC((int) cals.GetMaxForGradeC());
+        i.SetMaxD((int) cals.GetMaxForGradeD());
+        i.SetMaxF((int) cals.GetMaxForGradeF());
 
         i.SetScore(s1);
         s1.SetGrade(i.GetGrade());
@@ -100,5 +121,7 @@ public class Main2 {
         i.SetScore(s4);
         s4.SetGrade(i.GetGrade());
         System.out.println(s4.GetStudyResult());
+
+
     }
 }
