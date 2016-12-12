@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-/**
- * Created by Admin on 12/12/2016.
- */
-public class GraduateStudentBuilder implements StudentBuilder {
+public class StudentDirector {
+    private StudentBuilder studentBuilder;
+    public void setBuilder(StudentBuilder studentBuilder){
+        this.studentBuilder = studentBuilder;
+    }
     Scanner scan = new Scanner(System.in);
 
     private boolean checkIDPattern(String input) {
@@ -11,10 +12,10 @@ public class GraduateStudentBuilder implements StudentBuilder {
     }
 
     private boolean checkNamePattern(String input) {
-        return input.matches("[A-Za-z -]{1,}");
+        return input.matches("[A-Za-z -]{1,255}");
     }
 
-    // builder pattern for instantiating undergraduate student with state equal to "Undergraduate student"
+    // builder pattern for instantiating student with student builder to define the status of the student
     public UnderGraduateStudent createStudent() {
         UnderGraduateStudent student = new UnderGraduateStudent();
         String input;
@@ -46,8 +47,7 @@ public class GraduateStudentBuilder implements StudentBuilder {
             System.out.println("invalid lastname");
         }
         student.setLastName(input);
-        // set state of the student to "Undergraduate student"
-        //student.setStudentState("Graduated student");
+        studentBuilder.getGraduateStatus(student);
         return student;
     }
 }
