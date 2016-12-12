@@ -95,7 +95,7 @@ public class Main2 {
         i.SetMaxC((int) cals.GetMaxForGradeC());
         i.SetMaxD((int) cals.GetMaxForGradeD());
         i.SetMaxF((int) cals.GetMaxForGradeF());
-
+//dd
         i.SetScore(s1);
         s1.SetGrade(i.GetGrade());
         System.out.println(s1.GetStudyResult());
