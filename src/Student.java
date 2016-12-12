@@ -2,8 +2,9 @@ import java.util.*;
 
 public class Student extends Person {
     private String studentId;
+    // We change one course to many courses by store it as Map with Grade for that course.
     private Map<Course, Grade> gradeByCourse = new HashMap<>();
-
+    // The student have a status [ State Pattern ]
     private StudentStatus studentState;
 
     public StudentStatus getStudentState() {
@@ -22,6 +23,7 @@ public class Student extends Person {
         this.studentId = studentId;
     }
 
+    // Change the implementation follows Map system.
     public void SetStudentMidtermScore(Course c, int m) {
         if (this.gradeByCourse.get(c) != null) {
             this.gradeByCourse.get(c).setMidtermExamScore(m);
@@ -46,10 +48,12 @@ public class Student extends Person {
         }
     }
 
+    // To input a course to the Map.
     public void addCourseName(Course c) {
         this.gradeByCourse.putIfAbsent(c, new Grade(c));
     }
 
+    // Show all course list.
     public List<Course> getCourseList() {
         return new ArrayList<>(gradeByCourse.keySet());
     }
@@ -64,10 +68,12 @@ public class Student extends Person {
         } else return 0;
     }
 
+    // To view information, we let the state decide the implementation [ State Pattern ]
     public void showPersonalInformation() {
         studentState.showPersonalInformation();
     }
 
+    // Show all scores according to the registered course.
     public void showAllScore() {
         for(Course c : this.getCourseList()) {
             System.out.println(gradeByCourse.get(c).GetGradeDetail());

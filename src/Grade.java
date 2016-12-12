@@ -37,7 +37,7 @@ public class Grade {
     }
 
     public String GetGradeDetail() {
-        String studyresult = "Subject " + this.course.getCourseName() + " with Total Score " + this.GetTotalScore() + " Get Grade " + this.Grade;
+        String studyresult = "Subject " + this.course.getCourseName() + " :  with Total Score " + this.GetTotalScore() + " Get Grade " + this.Grade;
         return studyresult;
     }
 }

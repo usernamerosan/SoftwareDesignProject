@@ -1,3 +1,4 @@
+// Edit only one method. The rest is the same as before apply pattern.
 public class GradeCalculatorByCriteria implements IGradeCalculator {
     int a, b, c, d, f, temp;
 

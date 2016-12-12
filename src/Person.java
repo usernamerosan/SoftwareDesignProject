@@ -1,4 +1,5 @@
 public class Person {
+    // Same as before apply pattern.
     private String FirstName;
 
     public String getFirstName() {

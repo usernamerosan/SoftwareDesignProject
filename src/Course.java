@@ -1,5 +1,5 @@
 public class Course {
-    // Concrete Flyweight
+    // Concrete Flyweight [ Flyweight Pattern ]
     private String courseName;
 
     public Course (String courseName) {

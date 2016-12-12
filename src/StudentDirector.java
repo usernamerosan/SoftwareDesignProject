@@ -1,10 +1,12 @@
 public class StudentDirector {
+    // Director class which used to create a student object corresponding to the builder object. [ Builder Pattern ]
+    // Stores the concrete builder
     private StudentBuilder studentBuilder;
     public void setBuilder(StudentBuilder studentBuilder){
         this.studentBuilder = studentBuilder;
     }
 
-    // builder pattern for instantiating student with student builder to define the status of the student
+    // this method is used to create a student object.
     public Student createStudent(String id, String name, String lastName) {
         Student student = new Student();
         student.setStudentId(id);

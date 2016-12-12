@@ -1,5 +1,5 @@
 public class GraduateStudent implements StudentStatus {
-    // A concreteState of StudentStatus which determine a student status is "Graduate".
+    // A concreteState of StudentStatus which determine a student status is "Graduate". [ State Pattern ]
     Student student;
 
     public GraduateStudent(Student newStudent) {

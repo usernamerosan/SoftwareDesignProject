@@ -1,5 +1,5 @@
 public class UnderGraduateStudent implements StudentStatus {
-
+    // A concreteState of StudentStatus which determine a student status is "UnderGraduate". [ State Pattern ]
     Student student;
 
     public  UnderGraduateStudent(Student newStudent) {

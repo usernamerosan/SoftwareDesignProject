@@ -1,3 +1,4 @@
+// Edit only one method. The rest is the same as before apply pattern.
 public interface IGradeCalculator {
     void SetMaxA(int score);//Set Maximum score for Grade A
 

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
+// Same as before apply pattern.
 public class MeanAndSDRangeCalculator {
     private List<Integer> scorelist = new ArrayList<Integer>();
 

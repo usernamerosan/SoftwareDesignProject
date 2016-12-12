@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CourseList {
-    // Flyweight Factory
+    // Flyweight Factory [ Flyweight Pattern ]
     // HashMap used to cache the course object which can reuse later.
     private Map<String, Course> courseList = new HashMap<String, Course>();
     public Course getCourse(String c) {
