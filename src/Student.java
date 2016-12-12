@@ -2,6 +2,16 @@ public class Student extends Person {
     private String studentId;
     private Course course = new Course();
 
+    private StudentStatus studentState;
+
+    public StudentStatus getStudentState() {
+        return studentState;
+    }
+
+    public void setStudentState(StudentStatus studentState) {
+        this.studentState = studentState;
+    }
+
     public String getStudentId() {
         return studentId;
     }
@@ -52,7 +62,8 @@ public class Student extends Person {
         } else return 0;
     }
 
-    public String GetStudyResult() {
-        return this.studentId + " " + this.getFirstName() + " " + this.getLastName() + " study " + this.course.GetGradeDetail();
+    public void showPersonalInformation() {
+        studentState.showPersonalInformation();
     }
+
 }

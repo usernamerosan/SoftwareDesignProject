@@ -1,8 +1,8 @@
-public class GraduateStudent implements StudentStatus {
+public class UnderGraduateStudent implements StudentStatus {
 
     Student student;
 
-    public GraduateStudent(Student newStudent) {
+    public  UnderGraduateStudent(Student newStudent) {
         student = newStudent;
     }
 
@@ -11,6 +11,6 @@ public class GraduateStudent implements StudentStatus {
         System.out.println("Student ID : "+ student.getStudentId());
         System.out.println("First Name : "+ student.getFirstName());
         System.out.println("Last Name : "+ student.getLastName());
-        System.out.println("Student State : Graduate Student");
+        System.out.println("Student Status : Undergraduate Student");
     }
 }
