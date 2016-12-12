@@ -2,9 +2,10 @@ public class Main2 {
     public static void main(String[] args) {
 
 
-        StudentBuilder sb = new UnderGraduateStudentBuilder();
-        UnderGraduateStudent s = sb.createStudent();
-        UnderGraduateStudent s1 = new UnderGraduateStudent();
+        StudentDirector sd = new StudentDirector();
+        sd.setBuilder(new UnderGraduateStudentBuilder());
+        Student s = sd.createStudent("5555","Dan","Amazon");
+        Student s1 = new Student();
         s.SetCourseName("OOP");
         s.SetHomeWorkScore("OOP", 20);
         s.SetProjectScore("OOP", 20);
@@ -19,7 +20,7 @@ public class Main2 {
         s1.SetStudentMidtermScore("OOP", 22);
         s1.SetFinalExamScore("OOP", 24);
 
-        UnderGraduateStudent s2 = new UnderGraduateStudent();
+        Student s2 = new Student();
         s2.setFirstName("Chris");
         s2.setLastName("Tesla");
         s2.setStudentId("0002");
@@ -29,7 +30,7 @@ public class Main2 {
         s2.SetStudentMidtermScore("OOP", 20);
         s2.SetFinalExamScore("OOP", 17);
 
-        UnderGraduateStudent s3 = new UnderGraduateStudent();
+        Student s3 = new Student();
         s3.setFirstName("David");
         s3.setLastName("Bahmm");
         s3.setStudentId("0003");
@@ -39,7 +40,7 @@ public class Main2 {
         s3.SetStudentMidtermScore("OOP", 12);
         s3.SetFinalExamScore("OOP", 10);
 
-        UnderGraduateStudent s4 = new UnderGraduateStudent();
+        Student s4 = new Student();
         s4.setFirstName("Alex");
         s4.setLastName("Kristopher");
         s4.setStudentId("0004");

@@ -4,7 +4,7 @@ public interface IGradeCalculator {
     void SetMaxC(int score);//Set Maximum score for Grade C
     void SetMaxD(int score);//Set Maximum score for Grade D
     void SetMaxF(int score);//Set Maximum score for Grade F
-    void SetScore(UnderGraduateStudent s);//Set score for grade calculation
+    void SetScore(Student s);//Set score for grade calculation
     String GetGrade();
     void SetMinA(int score);//Set Minimum score for Grade A
     void SetMinB(int score);//Set Minimum score for Grade B

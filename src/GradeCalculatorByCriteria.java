@@ -27,7 +27,7 @@ public class GradeCalculatorByCriteria implements IGradeCalculator {
     }
 
     @Override
-    public void SetScore(UnderGraduateStudent s) {
+    public void SetScore(Student s) {
         this.temp = s.GetTotalScore(s.GetCourseName());
     }
 

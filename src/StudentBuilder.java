@@ -1,3 +1,3 @@
 public interface StudentBuilder {
-    UnderGraduateStudent getGraduateStatus();
+    void getGraduateStatus(Student student);
 }

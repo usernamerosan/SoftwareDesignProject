@@ -1,5 +1,5 @@
 public class UnderGraduateStudentBuilder implements StudentBuilder {
-    public void getGraduateStatus(UnderGraduateStudent student){
+    public void getGraduateStatus(Student student){
         student.setStudentState("Undergraduate student");
     }
 }
