@@ -28,19 +28,22 @@ public class GradeCalculatorByCriteria implements IGradeCalculator {
 
     @Override
     public void SetScore(Student s) {
-        this.temp = s.GetTotalScore(s.GetCourseName());
+        for(Course course : s.getCourseList()) {
+            temp = s.GetTotalScore(course);
+            if (temp > b) {
+                s.SetGrade(course, "A");
+            } else if (temp > c) {
+                s.SetGrade(course, "B");
+            } else if (temp > d) {
+                s.SetGrade(course, "C");
+            } else if (temp > f) {
+                s.SetGrade(course, "D");
+            } else s.SetGrade(course, "F");
+        }
     }
 
     public String GetGrade() {
-        if (temp > b) {
-            return "A";
-        } else if (temp > c) {
-            return "B";
-        } else if (temp > d) {
-            return "C";
-        } else if (temp > f) {
-            return "D";
-        } else return "F";
+        return null;
     }
 
     public void SetMinA(int score) {
