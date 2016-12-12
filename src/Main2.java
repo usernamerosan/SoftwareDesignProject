@@ -1,6 +1,76 @@
 public class Main2 {
     public static void main(String[] args) {
+
+        // Create courseList which stores courses object.
         CourseList courseList = new CourseList();
+
+        // Create a director for build the student object.
+        StudentDirector studentDirector = new StudentDirector();
+
+        // First we will let you build a UnderGraduate Student.
+        // Then we set the director to build it.
+        studentDirector.setBuilder(new UnderGraduateStudentBuilder());
+
+        // Create first example
+        Student student1 = studentDirector.createStudent("0001", "Alex", "Kristopher");
+
+        // Then we put some course to this student.
+        // We store course object from the "courseList" in a variable for re-using further.
+        Course oopCourse = courseList.getCourse("OOP");
+        student1.addCourseName(oopCourse);
+
+        // We put scores of this to the course.
+        student1.SetStudentMidtermScore(oopCourse, 20);
+        student1.SetHomeWorkScore(oopCourse, 5);
+        student1.SetProjectScore(oopCourse, 10);
+        student1.SetFinalExamScore(oopCourse, 34);
+
+        // We show another course example.
+        Course ooadCourse = courseList.getCourse("OOAD");
+        student1.addCourseName(ooadCourse);
+
+        // The same processes as above example.
+        student1.SetStudentMidtermScore(ooadCourse, 13);
+        student1.SetHomeWorkScore(ooadCourse, 10);
+        student1.SetProjectScore(ooadCourse, 15);
+        student1.SetFinalExamScore(ooadCourse, 10);
+
+        // Now we want to see the grades for each course.
+        // So we have to create the Calculator.
+        // In this example, we using the grade by criteria.
+        IGradeCalculator gradeCalculator = new GradeCalculatorByCriteria();
+
+        // We have to set criteria for calculating a grade before.
+        gradeCalculator.SetMaxA(100);
+        gradeCalculator.SetMaxB(80);
+        gradeCalculator.SetMaxC(60);
+        gradeCalculator.SetMaxD(50);
+        gradeCalculator.SetMaxF(40);
+
+        // Now we have the calculator.
+        // We use it to calculate the student scores.
+        gradeCalculator.SetScore(student1);
+
+        // Finally, we show the grade for each course.
+        // We also show the student information too.
+        student1.showPersonalInformation();
+        student1.showAllScore();
+
+
+
+
+//        MeanAndSDRangeCalculator cals = new MeanAndSDRangeCalculator();
+//        cals.AddScore(s1.GetTotalScore("OOP"));
+//        cals.AddScore(s2.GetTotalScore("OOP"));
+//        cals.AddScore(s3.GetTotalScore("OOP"));
+//        cals.AddScore(s4.GetTotalScore("OOP"));
+//        i.SetMaxA((int) cals.GetMaxForGradeA());
+//        i.SetMaxB((int) cals.GetMaxForGradeB());
+//        i.SetMaxC((int) cals.GetMaxForGradeC());
+//        i.SetMaxD((int) cals.GetMaxForGradeD());
+//        i.SetMaxF((int) cals.GetMaxForGradeF());
+
+
 
         Course OOPCourse = courseList.getCourse("OOP");
 
@@ -16,7 +86,7 @@ public class Main2 {
 
         Course abcCourse = courseList.getCourse("ABC");
         s10.addCourseName(abcCourse);
-        s10.SetStudentMidtermScore(abcCourse, 20);
+        s10.SetStudentMidtermScore(abcCourse, 0);
         s10.SetHomeWorkScore(abcCourse, 9);
         s10.SetProjectScore(abcCourse, 12);
         s10.SetFinalExamScore(abcCourse, 18);

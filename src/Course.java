@@ -1,4 +1,5 @@
 public class Course {
+    // Concrete Flyweight
     private String courseName;
 
     public Course (String courseName) {
@@ -12,5 +13,4 @@ public class Course {
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
-
 }

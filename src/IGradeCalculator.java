@@ -11,7 +11,8 @@ public interface IGradeCalculator {
 
     void SetScore(Student s);//Set score for grade calculation
 
-    String GetGrade();
+    //String GetGrade(); // Remove it because we have already created
+    // a new method for show the grade calculation in the Student class.
 
     void SetMinA(int score);//Set Minimum score for Grade A
 

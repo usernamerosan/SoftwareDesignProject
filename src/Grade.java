@@ -1,4 +1,7 @@
 public class Grade {
+    // Separate a grade information from the course class.
+    // We can't keep the grade information in flyweight because a grade information never be the same.
+    // But the result of a program should not change. Therefore we still have the course object in this class.
     private Course course;
     private int midtermExamScore;
     private int homeworkScore;

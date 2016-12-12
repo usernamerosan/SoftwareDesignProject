@@ -72,5 +72,6 @@ public class Student extends Person {
         for(Course c : this.getCourseList()) {
             System.out.println(gradeByCourse.get(c).GetGradeDetail());
         }
+        System.out.println("---------------------------------------");
     }
 }

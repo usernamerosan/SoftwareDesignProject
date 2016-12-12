@@ -10,7 +10,7 @@ public class StudentDirector {
         student.setStudentId(id);
         student.setFirstName(name);
         student.setLastName(lastName);
-        //studentBuilder.getGraduateStatus(student);
+        studentBuilder.getGraduateStatus(student);
         return student;
     }
 }

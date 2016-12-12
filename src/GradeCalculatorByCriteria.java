@@ -26,6 +26,7 @@ public class GradeCalculatorByCriteria implements IGradeCalculator {
         this.f = score;
     }
 
+    // Edit this method which can define the score to the student's courses immediately.
     @Override
     public void SetScore(Student s) {
         for(Course course : s.getCourseList()) {
@@ -40,10 +41,6 @@ public class GradeCalculatorByCriteria implements IGradeCalculator {
                 s.SetGrade(course, "D");
             } else s.SetGrade(course, "F");
         }
-    }
-
-    public String GetGrade() {
-        return null;
     }
 
     public void SetMinA(int score) {
