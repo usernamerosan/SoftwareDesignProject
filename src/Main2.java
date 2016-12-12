@@ -1,7 +1,6 @@
 public class Main2 {
     public static void main(String[] args) {
-
-
+        
         StudentDirector sd = new StudentDirector();
         sd.setBuilder(new UnderGraduateStudentBuilder());
         Student s = sd.createStudent("5555","Dan","Amazon");
