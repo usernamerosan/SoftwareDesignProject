@@ -1,6 +1,8 @@
+import java.util.*;
+
 public class Student extends Person {
     private String studentId;
-    private Course course = new Course();
+    private Map<Course, Grade> gradeByCourse = new HashMap<>();
 
     private StudentStatus studentState;
 
@@ -16,49 +18,49 @@ public class Student extends Person {
         return studentId;
     }
 
-    public String GetCourseName() {
-        return this.course.getCourseName();
-    }
-
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
 
-    public void SetStudentMidtermScore(String c, int m) {
-        if (this.course.getCourseName() == c) {
-            this.course.setMidtermExamScore(m);
+    public void SetStudentMidtermScore(Course c, int m) {
+        if (this.gradeByCourse.get(c) != null) {
+            this.gradeByCourse.get(c).setMidtermExamScore(m);
         }
     }
 
-    public void SetHomeWorkScore(String c, int h) {
-        if (this.course.getCourseName() == c) {
-            this.course.setHoweworkScore(h);
+    public void SetHomeWorkScore(Course c, int h) {
+        if (this.gradeByCourse.get(c) != null) {
+            this.gradeByCourse.get(c).setHomeworkScore(h);
         }
     }
 
-    public void SetProjectScore(String c, int p) {
-        if (this.course.getCourseName() == c) {
-            this.course.setProjectScore(p);
+    public void SetProjectScore(Course c, int p) {
+        if (this.gradeByCourse.get(c) != null) {
+            this.gradeByCourse.get(c).setProjectScore(p);
         }
     }
 
-    public void SetFinalExamScore(String c, int f) {
-        if (this.course.getCourseName() == c) {
-            this.course.setFinalExamScore(f);
+    public void SetFinalExamScore(Course c, int f) {
+        if (this.gradeByCourse.get(c) != null) {
+            this.gradeByCourse.get(c).setFinalExamScore(f);
         }
     }
 
-    public void SetCourseName(String c) {
-        this.course.setCourseName(c);
+    public void addCourseName(Course c) {
+        this.gradeByCourse.putIfAbsent(c, new Grade(c));
     }
 
-    public void SetGrade(String g) {
-        this.course.SetGrade(g);
+    public List<Course> getCourseList() {
+        return new ArrayList<>(gradeByCourse.keySet());
     }
 
-    public int GetTotalScore(String c) {
-        if (this.course.getCourseName() == c) {
-            return this.course.GetTotalScore();
+    public void SetGrade(Course c, String g) {
+        this.gradeByCourse.get(c).SetGrade(g);
+    }
+
+    public int GetTotalScore(Course c) {
+        if (this.gradeByCourse.get(c) != null) {
+            return this.gradeByCourse.get(c).GetTotalScore();
         } else return 0;
     }
 
@@ -66,4 +68,9 @@ public class Student extends Person {
         studentState.showPersonalInformation();
     }
 
+    public void showAllScore() {
+        for(Course c : this.getCourseList()) {
+            System.out.println(gradeByCourse.get(c).GetGradeDetail());
+        }
+    }
 }
